@@ -1,31 +1,30 @@
 const $newCont = document.querySelector('#new')
-
 const $act = document.querySelectorAll('.action')
  
 $newCont.addEventListener('click',(()=>{
 	const q = parseInt(prompt('ingrese un numero'))
 	const p = new contador(q)
 
-	
 	for(let i = 0; i < $act.length; i++){
 		$act[i].addEventListener('click',(()=>{
-			if($act[i].getAttribute('id') == 'add'){
+		const id = $act[i].getAttribute('id')
+		switch (id) {
+			case 'add':
 				p.add()
-			}
-			if($act[i].getAttribute('id') == 'remove'){
+				break;
+			case 'remove':
 				p.remove()
-			}
-			if($act[i].getAttribute('id') == 'Show'){
+				break;
+			case 'Show':
 				const paragraph = document.querySelector('#text').innerHTML = p.valorActual()
-			}
-			if($act[i].getAttribute('id') == 'reset'){
+				break;
+			case 'reset':
 				p.reset()
-			}
-
-			if($act[i].getAttribute('id') == 'change'){
+				break;
+			case 'change':
 				let input = parseInt(document.querySelector('#input').value)
 				p.valorActual(input)
-				
+				break;
 			}
 		}))
 	}
