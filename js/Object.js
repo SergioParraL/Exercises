@@ -1,6 +1,6 @@
 const $newCont = document.querySelector('#new')
 const $act = document.querySelectorAll('.action')
- 
+let $arraCommand = []
 $newCont.addEventListener('click',(()=>{
 	const q = parseInt(prompt('ingrese un numero'))
 	const p = new contador(q)
@@ -8,6 +8,9 @@ $newCont.addEventListener('click',(()=>{
 	for(let i = 0; i < $act.length; i++){
 		$act[i].addEventListener('click',(()=>{
 		const id = $act[i].getAttribute('id')
+		if (id != null){
+			$arraCommand.push(id)
+		}
 		switch (id) {
 			case 'add':
 				p.add()
@@ -25,6 +28,8 @@ $newCont.addEventListener('click',(()=>{
 				let input = parseInt(document.querySelector('#input').value)
 				p.valorActual(input)
 				break;
+			default:
+				getCommont($arraCommand)
 			}
 		}))
 	}
@@ -44,3 +49,12 @@ function contador(inicial) {
 	}
 }
 
+function getCommont (arr) {
+	const lastItem = arr[arr.length - 1]
+	const text = document.createTextNode(lastItem)
+	const p = document.createElement('p')
+	p.appendChild(text)
+	const place = document.querySelector('#showPcreated')
+	place.appendChild(p)
+
+}
