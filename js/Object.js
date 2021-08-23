@@ -1,6 +1,6 @@
 const $newCont = document.querySelector('#new')
 const $act = document.querySelectorAll('.action')
-let $arraCommand = []
+let $arrCommand = []
 $newCont.addEventListener('click',(()=>{
 	const q = parseInt(prompt('ingrese un numero'))
 	const p = new contador(q)
@@ -9,7 +9,7 @@ $newCont.addEventListener('click',(()=>{
 		$act[i].addEventListener('click',(()=>{
 		const id = $act[i].getAttribute('id')
 		if (id != null){
-			$arraCommand.push(id)
+			$arrCommand.push(id)
 		}
 		switch (id) {
 			case 'add':
@@ -29,7 +29,8 @@ $newCont.addEventListener('click',(()=>{
 				p.valorActual(input)
 				break;
 			default:
-				getCommont($arraCommand)
+				p.lastCommand($arrCommand)
+				// getCommont($arraCommand)
 			}
 		}))
 	}
@@ -47,14 +48,12 @@ function contador(inicial) {
 			return inicial = e
 		}
 	}
-}
-
-function getCommont (arr) {
-	const lastItem = arr[arr.length - 1]
-	const text = document.createTextNode(lastItem)
-	const p = document.createElement('p')
-	p.appendChild(text)
-	const place = document.querySelector('#showPcreated')
-	place.appendChild(p)
-
+	this.lastCommand = (arr) => {
+		const lastItem = arr[arr.length - 1]
+		const text = document.createTextNode(lastItem)
+		const p = document.createElement('p')
+		p.appendChild(text)
+		const place = document.querySelector('#showPcreated')
+		place.appendChild(p)
+	}
 }
