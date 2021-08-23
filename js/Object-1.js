@@ -12,10 +12,10 @@ $newCont.addEventListener('click',(()=>{
 			$arrCommand.push(id)
 		}
 		switch (id) {
-			case 'add':
+			case 'increment':
 				p.add()
 				break;
-			case 'remove':
+			case 'decrement':
 				p.remove()
 				break;
 			case 'Show':
@@ -30,7 +30,6 @@ $newCont.addEventListener('click',(()=>{
 				break;
 			default:
 				p.lastCommand($arrCommand)
-				// getCommont($arraCommand)
 			}
 		}))
 	}
