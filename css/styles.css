@@ -1,0 +1,56 @@
+body{
+	font-family: Poppins,sans-serif;
+	font-size: 16px;
+	background-color: rgb(255, 242, 225)
+}
+
+.box-buttons{
+	background-color: rgb(153, 93, 181);
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	border: 1px solid rgb(40, 41, 35);
+	padding-bottom: 1em;
+}
+.button{
+	width: 7rem;
+	height: 2rem;
+	margin-right: 1em;
+	margin-top: 1rem;	
+	color: white;
+		border: 1px solid rgb(40, 41, 35);
+	background-color: rgb(247, 148, 31);
+}
+.box-buttons div{
+	border-bottom: 2px solid rgb(200, 200, 200);
+	padding-bottom: .3rem;
+}
+
+.button:first-child, .button:nth-child(6){
+	background-color: rgb(247, 247, 41);
+	color: black;
+}
+.button:first-child:active, .button:nth-child(6):active{
+	background-color: rgb(198, 198, 43);
+}
+.button:active{
+	background-color: rgb(202, 127, 38);
+}
+
+.label{
+	color: black;
+	font-weight: 700;
+	font-size: 1.2em;
+}
+.input{
+	height: 1.5rem;
+	border: none;
+	border-radius: 3em;
+	padding-left: 1em;
+}
+
+.text > p{
+	color: black;
+	font-size: 1.5em;
+	font-weight: 600;
+}
