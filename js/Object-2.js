@@ -29,7 +29,8 @@ function fly () {
 	$isnt.fly(number) 
 }
 function energy () {
-	console.log($isnt.energy)
+	const p = document.querySelector('#showEnergy')
+	p.innerHTML = $isnt.energy
 }
 function showMessage(){
 	const message = document.querySelector('.messageDiv')
