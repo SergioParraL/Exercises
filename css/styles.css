@@ -4,22 +4,31 @@ body{
 	background-color: rgb(255, 242, 225)
 }
 
+h1{
+	text-align: center;
+	font-size: 2rem;
+}
+
 .box-buttons{
 	background-color: rgb(153, 93, 181);
 	display: flex;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 	border: 1px solid rgb(40, 41, 35);
-	padding-bottom: 1em;
+	padding-bottom: 2em;
+	box-shadow: inset 0px -10px 15px 5px black; 
 }
 .button{
 	width: 7rem;
 	height: 2rem;
-	margin-right: 1em;
+	margin:  0 .5em;
 	margin-top: 1rem;	
 	color: white;
-		border: 1px solid rgb(40, 41, 35);
+	border: 1px solid rgb(40, 41, 35);
 	background-color: rgb(247, 148, 31);
+	flex-grow: 1;
+	flex-shrink: 3;
+	box-shadow: 2px 2px 1px 1px black;
 }
 .box-buttons div{
 	border-bottom: 2px solid rgb(200, 200, 200);
@@ -29,12 +38,15 @@ body{
 .button:first-child, .button:nth-child(6){
 	background-color: rgb(247, 247, 41);
 	color: black;
+	flex-grow: 3;
+
 }
 .button:first-child:active, .button:nth-child(6):active{
 	background-color: rgb(198, 198, 43);
 }
 .button:active{
 	background-color: rgb(202, 127, 38);
+	transform: scale(.9);
 }
 
 .label{
